@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [tailwindcss(), react()],
   server: {
     // コンテナ外からアクセスできるよう 0.0.0.0 にバインド
     host: '0.0.0.0',
