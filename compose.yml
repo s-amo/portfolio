@@ -1,0 +1,25 @@
+services:
+  dev:
+    build:
+      context: .
+      target: dev
+    ports:
+      - "5173:5173"
+    volumes:
+      # ホスト側のソースをコンテナにマウント（ホットリロード対応）
+      - .:/app
+      # node_modules はコンテナ内のものを優先（ホスト側と競合させない）
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    stdin_open: true
+    tty: true
+
+  preview:
+    build:
+      context: .
+      target: preview
+    ports:
+      - "4173:4173"
+    profiles:
+      - preview

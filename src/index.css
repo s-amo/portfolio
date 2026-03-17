@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+/* クラスベースのダークモード設定（手動トグル対応） */
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  scroll-behavior: smooth;
+}
