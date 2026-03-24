@@ -26,7 +26,7 @@ const links = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 px-4 bg-gradient-to-br from-gray-50 to-indigo-50 dark:from-gray-900 dark:to-indigo-950">
+    <section id="contact" className="py-24 px-4">
       <div className="max-w-3xl mx-auto text-center">
         <p className="text-sm font-semibold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase mb-3">
           Contact

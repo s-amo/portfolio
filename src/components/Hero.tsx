@@ -20,69 +20,100 @@ const LinkedinIcon = () => (
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-14 pb-24 bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-indigo-950 dark:via-gray-950 dark:to-purple-950">
-      {/* 背景グロー */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-300/25 dark:bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative min-h-screen flex items-center px-4 pt-14 pb-24 overflow-hidden">
 
-      <div className="relative z-10 max-w-2xl mx-auto">
-        <p className="text-sm font-semibold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase mb-4">
-          Portfolio
-        </p>
-        <h1 className="text-4xl md:text-6xl font-bold mb-3 bg-linear-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent dark:from-indigo-400 dark:to-purple-400">
-          {profile.name}
-        </h1>
-        <p className="text-lg md:text-2xl text-gray-600 dark:text-gray-300 font-medium mb-6">
-          {profile.catchcopy}
-        </p>
-        <p className="text-base text-gray-500 dark:text-gray-400 leading-relaxed mb-8 max-w-xl mx-auto">
-          {profile.bio}
-        </p>
+      <div className="relative z-10 max-w-5xl mx-auto w-full grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+        {/* テキスト側 */}
+        <div className="text-center md:text-left animate-fade-in">
+          <p className="inline-block text-xs font-semibold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase mb-5 px-3 py-1 rounded-full border border-indigo-200 dark:border-indigo-800 bg-indigo-50 dark:bg-indigo-950/50">
+            Portfolio
+          </p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-linear-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent dark:from-indigo-400 dark:to-purple-400 leading-tight">
+            {profile.name}
+          </h1>
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 font-medium mb-5 leading-relaxed">
+            {profile.catchcopy}
+          </p>
+          <p className="text-base text-gray-500 dark:text-gray-400 leading-relaxed mb-8">
+            {profile.bio}
+          </p>
 
-        {/* SNS アイコンボタン */}
-        <div className="flex justify-center gap-4 mb-10">
-          <a
-            href={profile.social.github}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub"
-            className="p-3 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-400 shadow-sm hover:shadow-md transition-all"
-          >
-            <GithubIcon />
-          </a>
-          <a
-            href={profile.social.twitter}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Twitter / X"
-            className="p-3 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-400 shadow-sm hover:shadow-md transition-all"
-          >
-            <TwitterIcon />
-          </a>
-          <a
-            href={profile.social.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
-            className="p-3 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-400 shadow-sm hover:shadow-md transition-all"
-          >
-            <LinkedinIcon />
-          </a>
+          {/* SNS アイコンボタン */}
+          <div className="flex justify-center md:justify-start gap-3 mb-8">
+            <a
+              href={profile.social.github}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              className="p-3 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-400 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all"
+            >
+              <GithubIcon />
+            </a>
+            <a
+              href={profile.social.twitter}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Twitter / X"
+              className="p-3 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-400 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all"
+            >
+              <TwitterIcon />
+            </a>
+            <a
+              href={profile.social.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              className="p-3 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-400 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all"
+            >
+              <LinkedinIcon />
+            </a>
+          </div>
+
+          {/* CTA ボタン */}
+          <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-3">
+            <a
+              href="#projects"
+              className="px-7 py-3 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:-translate-y-0.5"
+            >
+              制作物を見る
+            </a>
+            <a
+              href="#contact"
+              className="px-7 py-3 rounded-xl border border-gray-300 dark:border-gray-700 font-semibold hover:bg-gray-50 dark:hover:bg-gray-900 hover:-translate-y-0.5 transition-all"
+            >
+              お問い合わせ
+            </a>
+          </div>
         </div>
 
-        {/* CTA ボタン */}
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <a
-            href="#projects"
-            className="px-6 py-3 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition-colors shadow-md hover:shadow-lg"
-          >
-            制作物を見る
-          </a>
-          <a
-            href="#contact"
-            className="px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-700 font-medium hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
-          >
-            お問い合わせ
-          </a>
+        {/* アバター側 */}
+        <div className="flex justify-center md:justify-end animate-fade-in-delay">
+          <div className="relative">
+            {/* 外側の装飾リング */}
+            <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-indigo-400/30 to-purple-400/30 blur-xl" />
+            <div className="absolute -inset-1 rounded-full border-2 border-dashed border-indigo-300/50 dark:border-indigo-600/50 animate-spin-slow" />
+
+            {/* メインのアバター円 */}
+            <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center shadow-2xl shadow-indigo-500/30">
+              {/* 人物シルエット */}
+              <svg viewBox="0 0 100 100" className="w-40 h-40 md:w-52 md:h-52" fill="none">
+                <circle cx="50" cy="32" r="18" fill="rgba(255,255,255,0.9)" />
+                <ellipse cx="50" cy="80" rx="28" ry="22" fill="rgba(255,255,255,0.9)" />
+              </svg>
+            </div>
+
+            {/* フローティングバッジ 1 */}
+            <div className="absolute -bottom-4 -left-6 bg-white dark:bg-gray-900 rounded-2xl px-4 py-2.5 shadow-xl border border-gray-100 dark:border-gray-800">
+              <p className="text-xs text-gray-400 dark:text-gray-500 font-medium">Experience</p>
+              <p className="text-lg font-bold text-indigo-600 dark:text-indigo-400">4年+</p>
+            </div>
+
+            {/* フローティングバッジ 2 */}
+            <div className="absolute -top-4 -right-6 bg-white dark:bg-gray-900 rounded-2xl px-4 py-2.5 shadow-xl border border-gray-100 dark:border-gray-800">
+              <p className="text-xs text-gray-400 dark:text-gray-500 font-medium">Projects</p>
+              <p className="text-lg font-bold text-purple-600 dark:text-purple-400">20+</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
